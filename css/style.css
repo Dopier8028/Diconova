@@ -1,4 +1,4 @@
-﻿﻿@charset "UTF-8";a:focus,button:focus{outline:none!important}
+﻿@charset "UTF-8";a:focus,button:focus{outline:none!important}
 button::-moz-focus-inner{border:0}
 :focus{outline:none}
 blockquote{padding:0;margin:0}
