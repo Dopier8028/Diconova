@@ -1192,3 +1192,24 @@ function nextImage() {
     currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
     document.getElementById('modalImage').src = images[currentIndex];
 }
+// Mostrar modal si no ha aceptado
+window.addEventListener("load", function() {
+    if (!localStorage.getItem("terminosAceptados")) {
+        document.getElementById("modalTerminos").style.display = "flex";
+    }
+});
+
+// Botón aceptar
+document.getElementById("aceptarTerminos").addEventListener("click", function() {
+    localStorage.setItem("terminosAceptados", "true");
+    document.getElementById("modalTerminos").style.display = "none";
+});
+// Mostrar después de 2 segundos
+setTimeout(() => {
+  document.getElementById("promoPopup").classList.add("show");
+}, 2000);
+
+// Cerrar popup
+document.querySelector(".cerrar-popup").onclick = function() {
+  document.getElementById("promoPopup").style.display = "none";
+};
